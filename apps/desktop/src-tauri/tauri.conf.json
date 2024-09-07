@@ -1,5 +1,5 @@
 {
-  "productName": "memory-up-2",
+  "productName": "Memory UP",
   "version": "0.0.0",
   "identifier": "com.mem.up",
   "build": {
@@ -11,7 +11,7 @@
   "app": {
     "windows": [
       {
-        "title": "memory-up-2",
+        "title": "Memory UP",
         "width": 641,
         "height": 715
       }
