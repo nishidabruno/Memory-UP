@@ -16,10 +16,10 @@ export const HomePage = () => {
   return (
     <div className="flex h-full">
       <Sidebar />
-      <main className={`ml-14 flex-1 p-6`}>
+      <main className="ml-14 flex-1 p-6">
         <div className="flex justify-between">
           <strong className="text-xl text-foreground/90">
-            Olá, bom te ver denovo!
+            Hey, good to see you again!
           </strong>
           <div className="flex gap-2">
             <CreateDeck />

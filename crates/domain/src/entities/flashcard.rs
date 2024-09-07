@@ -1,10 +1,7 @@
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-// use super::QuizSession;
-
 // Serialize derive is necessary for tauri command send serialized UUID to the front-end.
-// TODO: remove derive Serialize from here and serialize it in the controller (?).
 #[derive(Serialize, Deserialize, Debug, sqlx::FromRow)]
 pub struct Flashcard {
     pub id: Uuid,
@@ -39,10 +36,6 @@ impl Flashcard {
             self.repetitions = 0;
             self.interval = 0;
 
-            // For the cards which quality is lower than 3 we need to put it into a session
-            // in order to repeat it until the quality is at least 4.
-            // let mut session = QuizSession::new(self.deck_id);
-            // session.add_low_quality_flashcard(self.id);
             return;
         }
 

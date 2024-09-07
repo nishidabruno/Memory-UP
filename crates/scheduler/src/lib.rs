@@ -6,14 +6,13 @@ use tauri_plugin_notification::{NotificationExt, PermissionState};
 use tokio::time::{interval, Duration};
 use utils::AppError;
 
-// todo: check if some deck has an available flashcard to review
-//       and send an OS notification.
 pub async fn setup_scheduler(app: AppHandle) -> Result<(), AppError> {
     let db_manager = DbManager::new().await.unwrap();
     let pool = db_manager.get_db_instance();
 
-    // change to 3 hours later.
-    let mut interval = interval(Duration::from_secs(120));
+    let interval_time = Duration::from_secs(60 * 60 * 2); // 2 hours
+
+    let mut interval = interval(interval_time);
     interval.tick().await;
 
     loop {

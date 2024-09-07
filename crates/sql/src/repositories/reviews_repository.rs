@@ -98,7 +98,6 @@ impl ReviewsRepository<SqlitePool> for ReviewsRepositorySql {
     }
 
     async fn get_total_reviews_by_quality(&self) -> Result<Vec<QualityWiseReview>, AppError> {
-        // TODO: use fetch_many instead?
         let row = query(
             r#"
             SELECT
@@ -120,19 +119,19 @@ impl ReviewsRepository<SqlitePool> for ReviewsRepositorySql {
 
         let reviews = vec![
             QualityWiseReview {
-                quality: "Não lembro".to_string(),
+                quality: "Didn't remember".to_string(),
                 count: dont_remember,
             },
             QualityWiseReview {
-                quality: "Difícil".to_string(),
+                quality: "Hard".to_string(),
                 count: hard,
             },
             QualityWiseReview {
-                quality: "Médio".to_string(),
+                quality: "Medium".to_string(),
                 count: medium,
             },
             QualityWiseReview {
-                quality: "Fácil".to_string(),
+                quality: "Easy".to_string(),
                 count: easy,
             },
         ];
@@ -141,7 +140,6 @@ impl ReviewsRepository<SqlitePool> for ReviewsRepositorySql {
     }
 
     async fn get_correct_percentage(&self, deck_id: Uuid) -> Result<f32, AppError> {
-        // TODO: use fetch_many instead?
         let row = query(
             r#"
             SELECT

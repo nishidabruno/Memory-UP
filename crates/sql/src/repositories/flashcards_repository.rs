@@ -51,7 +51,6 @@ impl FlashcardsRepository<SqlitePool> for FlashcardsRepositorySql {
     }
 
     async fn find_flashcard_by_deck_id(&self, deck_id: Uuid) -> Result<Vec<Flashcard>, AppError> {
-        // TODO: use fetch_many instead?
         let rows = query("SELECT * FROM flashcards WHERE deck_id = ?1")
             .bind(deck_id)
             .fetch_all(&self.pool)
@@ -115,8 +114,6 @@ impl FlashcardsRepository<SqlitePool> for FlashcardsRepositorySql {
         &self,
         deck_id: Uuid,
     ) -> Result<Option<Flashcard>, AppError> {
-        // SELECT * FROM flashcards WHERE deck_id = ?1 AND DATE('now') >= DATE(updated_at, '+' || interval || ' days') ORDER BY RANDOM() LIMIT 1
-        // dia now: 30, last_updated: 10+interval(1) = 11
         match query("SELECT * FROM flashcards WHERE deck_id = ?1 AND DATE('now') >= DATE(updated_at, '+' || interval || ' days') ORDER BY RANDOM() LIMIT 1")
                 .bind(deck_id)
                 .fetch_one(&self.pool)

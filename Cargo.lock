@@ -4039,7 +4039,6 @@ dependencies = [
  "chrono",
  "domain",
  "dotenvy",
- "futures",
  "sqlx",
  "utils",
  "uuid",

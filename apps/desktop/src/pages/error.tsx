@@ -6,12 +6,12 @@ export const ErrorPage = () => {
   if (isRouteErrorResponse(error)) {
     return (
       <div>
-        <h1 color="white">Oops, algo está errado!</h1>
-        <h2>Tente reabrir o programa</h2>
+        <h1 color="white">Oops, something went wrong!</h1>
+        <h2>Try re-opening the app.</h2>
         <p>{error.statusText}</p>
       </div>
     )
   }
 
-  return <p>Algo deu errado, tente reabrir o programa.</p>
+  return <p>Oops, something went wrong! Try re-opening the app.</p>
 }

@@ -35,8 +35,8 @@ export const FlashcardDetailsPage = () => {
       }
     },
     onError: () => {
-      toast.error('Erro ao tentar salvar flashcard.', {
-        description: 'Tente novamente mais tarde.',
+      toast.error('Error while trying to save flashcard.', {
+        description: 'Try again later.',
       })
 
       navigate(-1)
@@ -55,8 +55,8 @@ export const FlashcardDetailsPage = () => {
 
   useEffect(() => {
     if (isError) {
-      toast.error('Erro ao carregar flashcard.', {
-        description: 'Tente novamente mais tarde.',
+      toast.error('Error loading flashcard.', {
+        description: 'Try again later.',
       })
 
       navigate(-1)
@@ -73,7 +73,7 @@ export const FlashcardDetailsPage = () => {
         </Button>
       </header>
 
-      <h1 className="my-6 text-3xl tracking-tighter">Editar flashcard</h1>
+      <h1 className="my-6 text-3xl tracking-tighter">Edit flashcard</h1>
 
       {/* TODO: Add toolbar */}
 
@@ -82,7 +82,7 @@ export const FlashcardDetailsPage = () => {
           <Label htmlFor="front-card">Front</Label>
           <Textarea
             className="mt-1 resize-none"
-            placeholder="A frente do seu card."
+            placeholder="The front side of your flashcard."
             id="front-card"
             defaultValue={flashcard.front}
             onChange={(event) => handleInputChange(event, 'front')}
@@ -93,7 +93,7 @@ export const FlashcardDetailsPage = () => {
           <Label htmlFor="back-card">Back</Label>
           <Textarea
             className="mt-1 resize-none"
-            placeholder="Atrás do seu card."
+            placeholder="The back side of your flashcard."
             id="back-card"
             defaultValue={flashcard.back}
             onChange={(event) => handleInputChange(event, 'back')}
@@ -107,7 +107,7 @@ export const FlashcardDetailsPage = () => {
       </div>
 
       <Button className="mt-6 w-full" onClick={handleUpdateFlashcard}>
-        Salvar
+        Save
       </Button>
     </div>
   )

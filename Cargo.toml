@@ -5,7 +5,8 @@ members = [
   "crates/sql",
   "crates/utils",
   "crates/http",
-  "apps/desktop/src-tauri", "crates/scheduler",
+  "apps/desktop/src-tauri",
+  "crates/scheduler",
 ]
 
 [workspace.dependencies]
@@ -20,3 +21,7 @@ anyhow = "1.0"
 thiserror = "1.0"
 chrono = "0.4"
 rand = "0.8.5"
+tauri = { version = "2.0.0-beta" }
+tauri-plugin-notification = "2.0.0-beta.7"
+futures = "0.3"
+

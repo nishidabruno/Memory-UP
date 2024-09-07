@@ -19,7 +19,6 @@ impl<T> UpdateFlashcardUseCase<T> {
         front: String,
         back: String,
     ) -> Result<(), AppError> {
-        // TODO: should we really use as mutable?
         let binding = self.repository.find_by_id(id).await?;
         let mut flashcard = Flashcard {
             id: binding.id,

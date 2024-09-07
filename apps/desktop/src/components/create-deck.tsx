@@ -31,15 +31,13 @@ export function CreateDeck() {
       await create({ title: deckTitle })
 
       queryClient.invalidateQueries({ queryKey: ['homepage', 'all-decks'] })
-      toast.success('Deck criado com sucesso!', {
+      toast.success('Deck created successfully!', {
         duration: 1500,
         position: 'bottom-left',
       })
       navigate('/')
     } catch (err) {
-      toast.error(
-        `Error ao criar deck novo. Tente novamente mais tarde. ${err}`,
-      )
+      toast.error(`Error creating new deck. Try again later. ${err}`)
     }
   }
 
@@ -48,14 +46,14 @@ export function CreateDeck() {
       <DialogTrigger asChild>
         <Button variant="outline">
           <Plus className="mr-2 h-4 w-4" />
-          Novo deck
+          New deck
         </Button>
       </DialogTrigger>
 
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Criar novo deck</DialogTitle>
-          <DialogDescription>Digite o nome do novo deck</DialogDescription>
+          <DialogTitle>Create new deck</DialogTitle>
+          <DialogDescription>Enter the name of the new deck</DialogDescription>
         </DialogHeader>
 
         <Input
@@ -64,7 +62,7 @@ export function CreateDeck() {
           onChange={(e) => setDeckTitle(e.target.value)}
         />
         <DialogClose asChild>
-          <Button onClick={() => handleCreateDeck()}>Criar</Button>
+          <Button onClick={() => handleCreateDeck()}>Create</Button>
         </DialogClose>
       </DialogContent>
     </Dialog>

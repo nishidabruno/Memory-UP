@@ -51,7 +51,7 @@ export const DeckCard = ({ data }: DeckCardProps) => {
         <Card className="min-w-[253px] cursor-pointer transition-colors hover:bg-secondary/20">
           <CardHeader>
             <p className="text-sm font-medium text-muted-foreground">
-              {flashcardsLeftForReview} sobrando
+              {flashcardsLeftForReview} left
             </p>
             <h2 className="text-xl font-bold text-primary">{data.title}</h2>
           </CardHeader>
@@ -59,14 +59,14 @@ export const DeckCard = ({ data }: DeckCardProps) => {
           <CardContent>
             <div className="flex justify-between">
               <span className="text-sm text-muted-foreground">
-                Total de cards:
+                Total flashcards:
               </span>
               <span className="text-sm text-primary">
                 {totalFlashcardsByDeck}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-sm text-muted-foreground">Acertos:</span>
+              <span className="text-sm text-muted-foreground">Hit:</span>
               <span className="text-sm text-primary">{correctPercentage}%</span>
             </div>
           </CardContent>
@@ -77,37 +77,37 @@ export const DeckCard = ({ data }: DeckCardProps) => {
         <DialogHeader>
           <DialogTitle>{data.title}</DialogTitle>
           <DialogDescription>
-            Comece seus estudos aqui. Clique em editar para mais detalhes
+            Start your studies here. Click edit for more details.
           </DialogDescription>
         </DialogHeader>
 
         <div className="flex flex-col">
           <div className="flex">
-            <span className="text-muted-foreground">Total de cards:&nbsp;</span>
+            <span className="text-muted-foreground">
+              Total flashcards:&nbsp;
+            </span>
             <span className="text-primary">{totalFlashcardsByDeck}</span>
           </div>
           <div className="flex">
             <span className="text-muted-foreground">
-              Cards faltando hoje:&nbsp;
+              Flashcards left for today:&nbsp;
             </span>
             <span className="text-primary">{flashcardsLeftForReview}</span>
           </div>
           <div className="flex">
-            <span className="text-muted-foreground">Acertos:&nbsp;</span>
+            <span className="text-muted-foreground">Hit:&nbsp;</span>
             <span className="text-primary">{correctPercentage}%</span>
           </div>
         </div>
 
         <div className="mt-4 flex justify-between">
-          <Button onClick={() => navigate(`/quiz/${data.id}`)}>
-            Começar !
-          </Button>
+          <Button onClick={() => navigate(`/quiz/${data.id}`)}>Start!</Button>
           <Button
             variant="secondary"
             onClick={() => navigate(`/decks/${data.id}`)}
           >
             <FadersHorizontal className="mr-2 h-4 w-4" weight="bold" />
-            Editar
+            Edit
           </Button>
         </div>
       </DialogContent>

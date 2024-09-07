@@ -13,5 +13,6 @@ async-trait = { workspace = true}
 uuid = { workspace = true }
 anyhow = { workspace = true }
 rand = { workspace = true }
-utils = { path = "../utils" }
 sqlx = { version = "0.7", features = [ "runtime-tokio", "sqlite", "migrate", "uuid" ] }
+
+utils = { path = "../utils" }

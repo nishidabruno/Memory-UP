@@ -2,7 +2,6 @@ use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 // Serialize derive is necessary for tauri command send serialized UUID to the front-end.
-// TODO: remove derive Serialize from here and serialize it in the controller (?).
 #[derive(Serialize, Deserialize, Debug, sqlx::FromRow)]
 pub struct Review {
     pub id: Uuid,

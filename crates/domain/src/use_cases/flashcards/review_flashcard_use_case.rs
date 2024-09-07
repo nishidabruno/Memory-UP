@@ -14,7 +14,6 @@ impl<T> ReviewFlashcardUseCase<T> {
     }
 
     pub async fn execute(&self, id: Uuid, quality: i32) -> Result<(), AppError> {
-        // TODO: should we really use as mutable?
         let mut binding = self.repository.find_by_id(id).await?;
         let flashcard = &mut binding;
 

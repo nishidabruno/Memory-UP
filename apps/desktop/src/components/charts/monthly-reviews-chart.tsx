@@ -34,8 +34,8 @@ export function MonthlyReviewsChart({ data }: MonthlyReviewsChartProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Reviews mensais</CardTitle>
-        <CardDescription>Total de reviews nos últimos meses.</CardDescription>
+        <CardTitle>Monthly Review</CardTitle>
+        <CardDescription>Total reviews in the last months.</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -50,7 +50,7 @@ export function MonthlyReviewsChart({ data }: MonthlyReviewsChartProps) {
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="month"
-              name="Mês"
+              name="Month"
               tickLine={false}
               axisLine={false}
               tickMargin={8}

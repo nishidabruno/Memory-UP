@@ -36,8 +36,8 @@ export function QualityWiseReviewsChart({
   return (
     <Card className="mb-2">
       <CardHeader>
-        <CardTitle>Reviews por qualidade</CardTitle>
-        <CardDescription>Resultado de reviews por qualidade</CardDescription>
+        <CardTitle>Reviews by quality</CardTitle>
+        <CardDescription>Review results by quality</CardDescription>
       </CardHeader>
       <CardContent className="pb-0">
         <ChartContainer config={chartConfig} className="mx-auto w-full">

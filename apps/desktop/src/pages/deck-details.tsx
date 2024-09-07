@@ -48,7 +48,7 @@ export const DeckDetailsPage = () => {
         </Button>
         <Button onClick={() => navigate(`/createCard/${deckId}`)} size="sm">
           <Plus className="mr-2 h-4 w-4" />
-          Novo card
+          New flashcard
         </Button>
       </header>
 
@@ -56,8 +56,8 @@ export const DeckDetailsPage = () => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Frente</TableHead>
-            <TableHead>Verso</TableHead>
+            <TableHead>Front</TableHead>
+            <TableHead>Back</TableHead>
           </TableRow>
         </TableHeader>
 

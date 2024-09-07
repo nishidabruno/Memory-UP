@@ -21,8 +21,8 @@ export const QuizReviewPage = () => {
   const { mutateAsync: review } = useMutation({
     mutationFn: reviewFlashcard,
     onError: () => {
-      toast.error('Erro ao fazer revisão.', {
-        description: 'Tente novamente mais tarde.',
+      toast.error('Error while reviewing', {
+        description: 'Try again later.',
       })
       navigate('/')
     },
@@ -43,7 +43,7 @@ export const QuizReviewPage = () => {
       <div className="flex justify-end">
         <Button variant="destructive" onClick={() => navigate('/')}>
           <SignOut size={18} weight="bold" className="mr-2" />
-          Sair
+          Leave
         </Button>
       </div>
 
@@ -53,16 +53,16 @@ export const QuizReviewPage = () => {
 
       <div className="flex justify-center gap-4">
         <Button onClick={() => handleReview(0)} variant="outline">
-          Não lembro
+          Didn&#39;t remember
         </Button>
         <Button onClick={() => handleReview(3)} variant="outline">
-          Difícil
+          Hard
         </Button>
         <Button onClick={() => handleReview(4)} variant="outline">
-          Médio
+          Medium
         </Button>
         <Button onClick={() => handleReview(5)} variant="outline">
-          Fácil
+          Easy
         </Button>
       </div>
     </div>

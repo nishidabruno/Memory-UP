@@ -15,8 +15,8 @@ import { useValidDeckId } from '@/hooks/use-valid-deck-id'
 import { createFlashcard } from '@/ipc/create-flashcard'
 
 const flashcardSchema = z.object({
-  front: z.string().min(1, { message: 'Minimo 1 letra.' }),
-  back: z.string().min(1, { message: 'Minimo 1 letra.' }),
+  front: z.string().min(1, { message: 'Enter at least 1 character.' }),
+  back: z.string().min(1, { message: 'Enter at least 1 character.' }),
 })
 
 type Flashcard = z.infer<typeof flashcardSchema>
@@ -37,8 +37,8 @@ export const CreateFlashcard = () => {
   const { mutateAsync: registerFlashcard } = useMutation({
     mutationFn: createFlashcard,
     onError: () => {
-      toast.error('Erro ao tentar criar flashcard.', {
-        description: 'Tente novamente mais tarde.',
+      toast.error('Error while trying create a new flashcard.', {
+        description: 'Try again later.',
       })
 
       navigate(-1)
@@ -50,7 +50,7 @@ export const CreateFlashcard = () => {
       deckId,
       ...data,
     })
-    toast.success('Card criado com sucesso!')
+    toast.success('New flashcard created!')
     navigate(-1)
   }
 
@@ -62,7 +62,7 @@ export const CreateFlashcard = () => {
         </Button>
       </header>
 
-      <h1 className="my-6 text-3xl tracking-tighter">Novo card</h1>
+      <h1 className="my-6 text-3xl tracking-tighter">New flashcard</h1>
 
       {/* TODO: Add toolbar */}
 
@@ -77,7 +77,7 @@ export const CreateFlashcard = () => {
             </div>
             <Textarea
               className="mt-1 resize-none"
-              placeholder="A frente do seu card."
+              placeholder="The front side of your flashcard."
               id="front-flashcard"
               {...register('front')}
               onChange={(event) => handleInputChange(event, 'front')}
@@ -91,7 +91,7 @@ export const CreateFlashcard = () => {
             </div>
             <Textarea
               className="mt-1 resize-none"
-              placeholder="Atrás do seu card."
+              placeholder="The back side of your flashcard."
               id="back-flashcard"
               {...register('back')}
               onChange={(event) => handleInputChange(event, 'back')}
@@ -105,7 +105,7 @@ export const CreateFlashcard = () => {
         </div>
 
         <Button className="mt-6 w-full" type="submit">
-          Criar card
+          Create flashcard
         </Button>
       </form>
     </div>

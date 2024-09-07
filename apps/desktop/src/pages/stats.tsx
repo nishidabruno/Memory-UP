@@ -26,7 +26,7 @@ export const Stats = () => {
     <div className="flex">
       <Sidebar />
       <div className="ml-14 h-full w-full space-y-4 p-4">
-        <h1 className="pt-3 text-3xl">Estatísticas</h1>
+        <h1 className="pt-3 text-3xl">Statistics</h1>
         <MonthlyReviewsChart data={formattedMonthlyReviews} />
         <QualityWiseReviewsChart data={qualityWiseReviews} />
       </div>

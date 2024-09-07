@@ -31,13 +31,13 @@ export const QuizPage = () => {
 
   useEffect(() => {
     if (isError) {
-      toast.error('Erro ao fazer revisão.', {
-        description: 'Tente novamente mais tarde.',
+      toast.error('Error when reviewing.', {
+        description: 'Try again later..',
       })
       navigate('/')
     }
     if (isSuccess && !flashcard) {
-      toast.info('Todos flashcards completados!')
+      toast.info('Good job! All flashcards completed!')
       return navigate('/')
     }
   }, [isError, isSuccess, flashcard, navigate])
@@ -47,7 +47,7 @@ export const QuizPage = () => {
       <div className="flex justify-end">
         <Button variant="destructive" onClick={() => navigate('/')}>
           <SignOut size={18} weight="bold" className="mr-2" />
-          Sair
+          Leave
         </Button>
       </div>
 
@@ -55,7 +55,7 @@ export const QuizPage = () => {
         <p className="text-3xl">{flashcard?.front}</p>
       </div>
 
-      <Button onClick={reviewQuiz}>Revelar</Button>
+      <Button onClick={reviewQuiz}>Reveal</Button>
     </div>
   )
 }

@@ -39,10 +39,3 @@ pub fn parse_str_uuid(deck_id: &str) -> Result<Uuid, AppError> {
 
     Ok(deck_id)
 }
-
-// struct UniqueID([u8; 16]);
-// impl From<uuid::Uuid> for UniqueID {
-//     fn from(uuid: uuid::Uuid) -> Self {
-//         todo!()
-//     }
-// }
